@@ -3,6 +3,8 @@ package Array;
 /**
  * maxPrefixSum
  */
+//Time Complexity is O(n^2)
+//Optimized solution
 public class maxPrefixSum {
     public static int prefixSum(int arr[]){
         int max = Integer.MIN_VALUE;
@@ -23,7 +25,7 @@ public class maxPrefixSum {
                 }
             }
         }
-        
+
         return max;
     }
     public static void main(String[] args) {

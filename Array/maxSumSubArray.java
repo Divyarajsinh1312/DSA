@@ -3,6 +3,8 @@ package Array;
 /**
  * maxSumSubArray
  */
+//Time Complexity is O(n^3)
+//This questions optimized solution is Prifix Sum Approch
 public class maxSumSubArray {
     public static int maxSum(int arr[]){
         int max = Integer.MIN_VALUE;
