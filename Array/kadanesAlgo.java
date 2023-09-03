@@ -4,6 +4,8 @@ package Array;
  * kadanesAlgo
  */
 public class kadanesAlgo {
+    //Most optimal solution for Maximum Sub Array Sum.
+    //Time Complexity is O(n).
     public static int kadanes(int arr[]){
         int max = Integer.MIN_VALUE;
         int sum = 0;
