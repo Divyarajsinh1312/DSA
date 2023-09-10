@@ -1,12 +1,12 @@
 package Searching;
 import java.util.*;
 /**
- * ceiling
+ * floor
  */
-public class ceiling {
-    public static int ceilingNumber(int array[], int key){
+public class floor {
+    public static int floorNumber(int array[], int key){
         int start = 0, end = array.length-1;
-        if (key>array[end]) {
+        if (key<array[start]) {
             return -1;
         }
         while(start <= end) {
@@ -21,17 +21,17 @@ public class ceiling {
                 return mid;
             }
         }
-        return start;
+        return end;
     }
     public static void main(String[] args) {
         int array[] = {2,3,5,9,14,16,18};
         Scanner scn = new Scanner(System.in);
         int key = scn.nextInt();
-        int ceiling = ceilingNumber(array, key);
-        if (ceiling == -1) {
-            System.out.println("Ceiling of a key is not found");
+        int floor = floorNumber(array, key);
+        if (floor == -1) {
+            System.out.println("floor of a key is not found");
         } else {
-            System.out.println("Ceiling of a key is " + array[ceiling]);
+            System.out.println("floor of a key is " + array[floor]);
         }
     }
 }
