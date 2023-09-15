@@ -1,4 +1,4 @@
-public class compare{
+public class stringFunctions{
 	public static void main(String[] args) {
 		String s1 = "Tony";//S1 and S2 are equal becuase s2 point s1 string.
 		String s2 = "Tony";
@@ -23,6 +23,20 @@ public class compare{
 		}else{
 			System.out.println("S1 and S2 ar not equal.");
 		}
+
+		//Substring Function
+		String str = "HelloJAVA";
+		System.out.println("Substring of " + str + " is " + str.substring(0,5));
+
+		//Largest String
+		String string[] = {"Tony Stark", "Steve Rogers", "Bruce Wyne", "Matt Murdok", "Peter Parker"};
+		String largest = str[0];
+		for (int i = 0; i<string.length; i++) {
+			if (largest.compareTo(string[i])<0) {
+				largest = string[i];
+			}
+		}
+		System.out.println(largest); 
 
 	}
 }
