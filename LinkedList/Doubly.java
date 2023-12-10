@@ -7,6 +7,9 @@ public class Doubly {
         list.insertHead(5);
         list.insertHead(10);
         list.insertHead(17);
+        list.insertTail(100);
+        list.insertTail(200);
+        list.insertAfterNode(300, 3);
         list.display();
         list.displayRev();
 
@@ -15,7 +18,7 @@ public class Doubly {
 
 public class  DLL {
 
-    Node head;
+    private Node head;
 
     public void insertHead(int value){
         Node node = new Node(value);
@@ -26,6 +29,53 @@ public class  DLL {
         }
         head = node;
     }
+
+    public void insertTail(int value){
+        Node node = new Node(value);
+        Node last = head;
+        node.next = null;
+        if (head == null) {
+            node.prev = null;
+            head = node;
+            return;
+        }
+        while (last.next != null) {
+            last = last.next;
+        }
+        last.next = node;
+        node.prev = last;
+    }
+
+    public Node find(int value){
+        Node node = head;
+        while (node != null) {
+            if (node.value == value) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
+    public void insertAfterNode(int value, int afterVal){
+    Node temp = find(afterVal);
+
+    if (temp == null) {
+        System.out.println("Node with value " + afterVal + " does not exist");
+        return;
+    }
+
+    Node node = new Node(value);
+    node.next = temp.next;
+    node.prev = temp;
+    
+    if (temp.next != null) {
+        temp.next.prev = node;
+    }
+    
+    temp.next = node;
+}
+
 
     public void display(){
         Node node = head;
@@ -60,6 +110,8 @@ public class  DLL {
         public Node(int value){
             this.value = value;
         }
+
+
 
         public Node(int value, Node next, Node prev){
             this.value = value; 
