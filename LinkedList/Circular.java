@@ -9,7 +9,7 @@ public class Circular {
         list.insertion(30);
         list.display();
         list.delete(10);
-        list.display()
+        list.display();
     }
 }
 
